@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        
+        <lightning-input type="checkbox" label="Show Details" onchange={checkHandler} class="slds-m-around_xx-small"></lightning-input>
+
+        <lightning-button label="click button" variant="success" onclick={clickHandler} class="slds-m-around_xx-small"></lightning-button>
+
+        <template if:true={displayDiv}>
+            <div>I am Here....check again to hide me</div>
+        </template>
+
+  <template if:true={displaybutton}>  
+      <div>I am Here....Click again to hide me</div>
+        
+</template>
+
+    </lightning-card>
+
+<lightning-card>
+         <div> <lightning-input type="text" onchange={changeHandler}></lightning-input></div>  
+<template lwc:if = {isMorning}>
+    <p>Good Morning India</p>
+</template>
+
+<template lwc:elseif = {isAfternoon}>
+    <p>Good Afternoon India</p>
+</template>
+
+<template lwc:else >
+    <p>Good Evening India</p>
+</template>
+
+</lightning-card>
+
+
+</template>

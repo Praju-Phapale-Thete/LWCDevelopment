@@ -1,0 +1,33 @@
+<template>
+<lightning-card title="Looping And Iteration">
+ 
+<div>
+  <lightning-input label='Enter City'  onchange={changeHandler} value={addcity}  class="cssInput"></lightning-input>
+    <div class="slds-m-around_medium"> </div>
+   <lightning-button label=' Add City' variant="success" onclick={clickhandler}></lightning-button>
+ 
+  </div>
+
+   <h1>Example of Each Directive</h1>
+    <ul class="slds-m-around_medium">
+<template for:each={cityList} for:item="city">
+       <p key={city}>{city}</p>
+
+      </template>
+    </ul>
+
+<h1>Example of iterater Directive</h1>
+<ul class="slds-m-around_medium">
+
+<template iterator:name={cityList}>
+      <template if:true={name.first}>
+          <p key={name.value}>[FIRST city]{name.value}</p>
+       </template>
+        <p key={name.value}>{name.value}</p>
+       <template if:true={name.last}>
+          <p key={name.value}>[LAST city]{name.value}</p>
+       </template>
+      </template>
+</ul>
+</lightning-card>
+</template>

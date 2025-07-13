@@ -1,0 +1,40 @@
+<template>
+<lightning-card title="Student Information">
+    <div class="slds-p-around_medium input-section">
+        <lightning-input 
+            type="number" 
+            label="Roll Number" 
+            value={newStudent.rollNumber} 
+            onchange={handleRollChange}>
+        </lightning-input>
+
+        <lightning-input 
+            label="Name" 
+            value={newStudent.name} 
+            onchange={handleNameChange}>
+        </lightning-input>
+
+        <lightning-input 
+            type="number" 
+            label="Age" 
+            value={newStudent.age} 
+            onchange={handleAgeChange}>
+        </lightning-input>
+     <br/>
+        <lightning-button 
+            label="Insert Student" 
+            onclick={addStudent} 
+            class="slds-m-top_medium"
+            variant="brand">
+        </lightning-button>
+    </div>
+
+    <div class="slds-p-around_medium">
+        <template for:each={studentsInfoParent} for:item="student">
+            <div key={student.rollNumber} class="tile-container">
+                <c-childstd stud-info={student} ontileclick={tileselectHandler}></c-childstd>
+            </div>
+        </template>
+    </div>
+</lightning-card>
+</template>

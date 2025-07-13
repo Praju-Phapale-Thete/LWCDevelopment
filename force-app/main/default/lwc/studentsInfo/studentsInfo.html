@@ -1,0 +1,39 @@
+<template>
+<!--<lightning-card title="Student Information">
+   
+
+    <div class="slds-p-around_medium">
+        <template for:each={studentsInfoParent} for:item="student">
+            <div key={student.rollNumber} class="tile-container">
+                <c-stud-info stud-info={student} ontileclick={tileselectHandler}></c-stud-info>
+            </div>
+        </template>
+    </div>
+</lightning-card>-->
+
+
+
+<lightning-card title="Student Details">
+<lightning-layout>
+<lightning-layout-item size="10">
+    <div class="slds-p-around_medium">
+       <ul>
+ <template for:each={studentsInfoParent} for:item="student">
+            <li key={student.rollNumber} >
+                <c-stud-Info stud-info={student} ></c-stud-Info>
+            </li>
+        </template>
+       </ul>
+    </div>
+</lightning-layout-item>
+<lightning-layout-item size="4">
+ {selectedStudent}
+</lightning-layout-item>
+</lightning-layout>
+</lightning-card>
+</template>
+
+
+
+
+
